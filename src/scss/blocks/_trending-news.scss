@@ -1,0 +1,224 @@
+@import "../base/mixins";
+
+.news {
+    width: 100%;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.news__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 55px;
+}
+
+// .news__header-title {}
+
+.news__header-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.news__navigation-info {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    color: $neutral1;
+}
+
+.news__navigation-buttons {
+    display: flex;
+    margin-left: 25px;
+}
+
+.news__buttons-prev,
+.news__buttons-next {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    border-radius: 2px;
+    transition: all 300ms;
+    color: #fff;
+    background-color: $neutral3;
+
+    &:hover {
+        background-color: $primary;
+    }
+}
+
+.news__buttons-prev {
+    transform: rotate(180deg);
+
+    &::before {
+        transform: translate(0px, 1px);
+    }
+}
+
+.news__buttons-next {
+    margin-left: 12px;
+
+    &::before {
+        transform: translate(0px, 1px);
+    }
+}
+
+.news__row {
+    display: grid;
+    grid-template-columns: minmax(0px, 570px) 1fr;
+    grid-auto-rows: 500px;
+    grid-gap: 30px;
+}
+
+.news__row-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 235px;
+    grid-gap: 30px;
+}
+
+.news__col--trending {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    .news--trending-btn {
+        margin: 0 auto;
+    }
+}
+
+.news--trending__item {
+    width: 100%;
+    max-width: 430px;
+    text-align: center;
+    padding: 30px 0;
+    border-radius: 50px 50px 0px 0px;
+    background: rgba(103, 54, 19, 0.5);
+}
+
+.news--trending-title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.news--trending-text {
+    max-width: 289px;
+    margin: 0 auto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.news--trending-btn {
+    max-width: 180px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #fff;
+
+    &::after {
+        content: "\e901";
+        font-family: 'icon' !important;
+        speak: never;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        margin-left: 13px;
+    }
+}
+
+
+.news__list-col {
+    display: grid;
+    grid-template-columns: minmax(0px, 270px) auto;
+    grid-gap: 30px;
+    align-items: center;
+}
+
+.news__col-img {
+    height: 100%;
+    @include imageBackground(no-repeat, cover, center);
+}
+
+.news__col-block {
+    width: 100%;
+}
+
+.news__block-title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+    margin-bottom: 12px;
+    color: $neutral1;
+}
+
+.news__block-text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 20px;
+    color: $neutral1;
+}
+
+@media (max-width: 1169px) {
+    .news__row {
+        grid-template-columns: 1fr;
+        grid-template-rows: 500px;
+        grid-auto-rows: auto;
+    }
+
+    .news__col--trending {
+        @include imageBackground(no-repeat, cover, initial);
+    }
+
+    .news__row-list {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: auto;
+    }
+
+    .news__list-col {
+        grid-template-columns: 1fr;
+    }
+
+    .news__col-img {
+        height: 235px;
+        @include imageBackground(no-repeat, cover, inherit);
+    }
+}
+
+@media (max-width: 480px) {
+
+    .news__header {
+        margin-bottom: 25px;
+    }
+
+    .news__header-title.title {
+        font-size: 22px;
+        line-height: 1.2em;
+    }
+
+    .news__navigation-info {
+        font-size: 14px;
+        line-height: 1.2em;
+    }
+
+    .news__row-list {
+        grid-template-columns: 1fr;
+    }
+}

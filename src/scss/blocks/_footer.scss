@@ -1,0 +1,154 @@
+.footer {
+    width: 100%;
+    background-color: $neutral1;
+}
+
+.footer__row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+}
+
+.footer__col--info {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo {
+    display: block;
+    margin-bottom: 30px;
+}
+
+.footer__col-contacts {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.footer__contacts-item {
+    margin-bottom: 8px;
+}
+
+.footer__contacts-link {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #f8f8f8;
+
+    span {
+        display: flex;
+        align-items: center;
+        margin-top: 1px;
+        margin-right: 15px;
+    }
+}
+
+.footer__col-socials {
+    display: flex;
+}
+
+.footer__socials-item {
+    margin-right: 20px;
+
+    &:last-child {
+        margin: 0;
+    }
+}
+
+.footer__socials-link {
+    font-size: 32px;
+    color: #fff;
+}
+
+.footer__col {
+    display: block;
+}
+
+.footer__col-title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 35px;
+    color: #fff;
+}
+
+.footer__col-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__list-item {
+    margin-bottom: 15px;
+
+    &:last-child {
+        margin: 0;
+    }
+}
+
+.footer__item-link {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #f8f8f8;
+}
+
+.footer__end {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px;
+    text-align: center;
+}
+
+.footer__end-text {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #f8f8f8;
+}
+
+@media (max-width: 1024px) {
+    .footer__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+    }
+}
+
+@media (max-width: 540px) {
+    .footer__row {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+    }
+
+    .footer-logo {
+        text-align: center;
+    }
+
+    .footer__contacts-link {
+        justify-content: center;
+    }
+
+    .footer__col-socials {
+        justify-content: center;
+    }
+
+    .footer__socials-link {
+        display: flex;
+        align-items: center;
+    }
+
+    .footer__col {
+        display: none;
+    }
+}
